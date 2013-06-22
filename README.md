@@ -4,12 +4,12 @@ R code and associated files for my chapters in the book [Tracking Environmental 
 
 The three chapters are
 
- * Statictical Learning in Palaeolimnology
+ * Statistical Learning in Palaeolimnology
  * Analogue Methods in Palaeolimnology
  * Human Impacts: Applications of Numerical Methods to Evaluate Surface-Water Acidification and Eutrophication
 
 Annotated versions are available on my blog, but those versions are not guaranteed to be current; always refer to the scripts in this repo for the most up-to-date versions.  Annotated versions are
 
- * [Statictical Learning in Palaeolimnology](http://www.fromthebottomoftheheap.net/code/dper-scripts/chapter-9-statistical-learning.html)
+ * [Statistical Learning in Palaeolimnology](http://www.fromthebottomoftheheap.net/code/dper-scripts/chapter-9-statistical-learning.html)
  * [Analogue Methods in Palaeolimnology](http://www.fromthebottomoftheheap.net/code/dper-scripts/chapter-15-analogue-methods.html)
  * [Human Impacts: Applications of Numerical Methods to Evaluate Surface-Water Acidification and Eutrophication](http://www.fromthebottomoftheheap.net/code/dper-scripts/chapter-19-human-impacts.html)
