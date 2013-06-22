@@ -10,6 +10,6 @@ The three chapters are
 
 Annotated versions are available on my blog, but those versions are not guaranteed to be current; always refer to the scripts in this repo for the most up-to-date versions.  Annotated versions are
 
- * [Statictical Learning in Palaeolimnology]({{ site.url }}/code/dper-scripts/chapter-9-statistical-learning.html)
- * [Analogue Methods in Palaeolimnology]({{ site.url }}/code/dper-scripts/chapter-15-analogue-methods.html)
- * [Human Impacts: Applications of Numerical Methods to Evaluate Surface-Water Acidification and Eutrophication]({{ site.url }}/code/dper-scripts/chapter-19-human-impacts.html)
+ * [Statictical Learning in Palaeolimnology](http://www.fromthebottomoftheheap.net/code/dper-scripts/chapter-9-statistical-learning.html)
+ * [Analogue Methods in Palaeolimnology](http://www.fromthebottomoftheheap.net/code/dper-scripts/chapter-15-analogue-methods.html)
+ * [Human Impacts: Applications of Numerical Methods to Evaluate Surface-Water Acidification and Eutrophication](http://www.fromthebottomoftheheap.net/code/dper-scripts/chapter-19-human-impacts.html)
