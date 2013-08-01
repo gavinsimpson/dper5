@@ -11,8 +11,8 @@ require(rpart)
 ## source Chpt9 Functions
 source("dper-chapter9_functions.R")
 
-## Load the SCP data ~/work/data/scp/SCP5.csv
-scp <- read.csv("~/work/data/scp/SCP5.csv")
+## Load the SCP data
+scp <- read.csv("../data/SCP5.csv")
 ## process the names:
 names(scp) <- c("Site","Particle","Fuel","FuelID","Fuel2","Fuel2ID","Index",
                 "Na","Mg","Al","Si","P","S","Cl","Cd","K","Ca","Ti","V",
