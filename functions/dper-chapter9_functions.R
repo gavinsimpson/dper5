@@ -1,3 +1,8 @@
+## force predict to return class labels only
+`pred.crt` <- function(object, newdata)
+    predict(object, newdata = newdata, type = "class")
+
+
 `cpPlot` <- function(RT, cex = 0.8, legend.loc = "topright") {
     tab <- RT$cptable
     xstd <- tab[, 5L]
