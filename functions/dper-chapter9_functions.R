@@ -1,3 +1,18 @@
+## Custom function for colours
+ggHueColours <- function(n, h = c(0, 360) + 15, l = 65, c = 100,
+                         direction = 1, h.start = 0) {
+    turn <- function(x, h.start, direction) {
+        (x + h.start) %% 360 * direction
+    }
+
+    if ((diff(h) %% 360) < 1) {
+      h[2] <- h[2] - 360 / n
+    }
+
+    hcl(h = turn(seq(h[1], h[2], length = n), h.start = h.start,
+        direction = direction), c = c, l =  l)
+}
+
 ## force predict to return class labels only
 `pred.crt` <- function(object, newdata)
     predict(object, newdata = newdata, type = "class")
