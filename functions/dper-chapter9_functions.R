@@ -310,7 +310,7 @@ ggHueColours <- function(n, h = c(0, 360) + 15, l = 65, c = 100,
 
 `myrpart.pca` <-  function (tree, pts = TRUE, plt.allx = TRUE, speclabs = TRUE,
                             specvecs = TRUE, wgt.ave = FALSE, add.tree = TRUE,
-                            cv1 = 1, cv2 = 2, chulls = TRUE,
+                            cv1 = 1, cv2 = 2, chulls = TRUE, specselect = NULL,
                             ...) {
     stopifnot(require(analogue))
     if (tree$method != "mrt")
@@ -435,14 +435,13 @@ ggHueColours <- function(n, h = c(0, 360) + 15, l = 65, c = 100,
     abline(v = 0, col = "darkgrey", lty = "dotted")
     if (speclabs) {
         ##browser()
-        want <- names(chooseTaxa(abernethy[, -(37:38)], n.occ = 5, max.abun = 5,
-                                 type = "AND"))
-        WANT <- which(specs %in% want)
+        WANT <- rep(TRUE, length(specs))
+        if (!is.null(specselect)) {
+            WANT <- which(specs %in% specselect)
+        }
         specs2 <- make.cepnames(specs)
         text(sc * y[WANT, cv1], sc * y[WANT, cv2] + 0.5 * adj * specvecs *
              (y[WANT, cv2] > 0), specs2[WANT], col = "black", cex = 0.6)
-        ## text(sc * y[, cv1], sc * y[, cv2] + 0.5 * adj * specvecs *
-        ##      (y[, cv2] > 0), specs[WANT], col = "black", cex = 0.7)
     }
     axis(1)
     axis(2)
