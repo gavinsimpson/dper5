@@ -213,7 +213,8 @@ ggHueColours <- function(n, h = c(0, 360) + 15, l = 65, c = 100,
                             digits = getOption("digits") - 2, tadj = 0.65,
                             stats = TRUE, use.n = FALSE, bars = TRUE,
                             legend = FALSE, xadj = 1, yadj = 1, bord = FALSE,
-                            big.pts = FALSE, ...) {
+                            big.pts = FALSE, uniform = FALSE, branch = 1, nspace = -1,
+                            minbranch = 0.3,...) {
     if (!inherits(x, "rpart"))
         stop("Not legitimate rpart")
     if (!is.null(x$frame$splits))
@@ -229,7 +230,9 @@ ggHueColours <- function(n, h = c(0, 360) + 15, l = 65, c = 100,
     cxy <- par("cxy")
     if (!is.null(srt <- list(...)$srt) && srt == 90)
         cxy <- rev(cxy)
-    xy <- mvpart:::rpartco(x)
+    parms <- list(uniform = uniform, branch = branch, nspace = nspace,
+        minbranch = minbranch)
+    xy <- mvpart:::rpartco(x, parms)
     node <- as.numeric(row.names(x$frame))
     is.left <- (node%%2 == 0)
     node.left <- node[is.left]
