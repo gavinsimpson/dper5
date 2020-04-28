@@ -30,7 +30,7 @@ require(analogue)
 data(swapdiat, swappH, rlgh, package = "analogue")
 
 ## load in the sample ages for the RLGH samples
-age <- read.csv("rlgh.age.csv", header = FALSE)
+age <- read.csv("../data/rlgh.age.csv", header = FALSE)
 age <- as.numeric(age[,1])
 
 ## merge the data to common set of taxa...
@@ -178,7 +178,7 @@ layout(1)
 data(Pollen, Biome, package = "analogue")
 
 ## load in the pollen sample type information
-pinfo <- read.csv("nampdb_sample_type.csv")
+pinfo <- read.csv("../data/nampdb_sample_type.csv")
 
 ## identify which are from lacustrine environments == "LACU"
 pol.want <- with(pinfo, which(KGDISCR == "LACU"))
@@ -266,7 +266,7 @@ lrm.prob <- numeric(length = length(max.roc))
 names(lrm.prob) <- names(max.roc)
 opti <- roc.pollen$statistics$`Opt. Dis.`
 for(i in seq_along(opti)) {
-    lrm.prob[i] <- predict(lrm.pollen[[i]],
+    lrm.prob[i] <- predict(lrm.pollen$models[[i]],
                            newdata = data.frame(Dij = opti[i]),
                            type = "response")
 }
