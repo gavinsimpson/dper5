@@ -4,9 +4,9 @@
 ##                                                                   ##
 ## R script to reproduce analyses in the chapter                     ##
 ##                                                                   ##
-## (c) 2011 Gavin L. Simpson                                         ##
+## (c) 2011-2020 Gavin L. Simpson                                    ##
 ##                                                                   ##
-## Version 1.1 04 January 2012                                       ##
+## Version 1.2 28 April 2020                                         ##
 ##                                                                   ##
 ## History:                                                          ##
 ##                                                                   ##
@@ -14,23 +14,34 @@
 ##                                                                   ##
 ##         1.1 - fixed an axis label                                 ##
 ##                                                                   ##
+##         1.1-1 - Fixed logitreg() example to work with newer       ##
+##                 versions of the analogue package                  ##
+##                                                                   ##
+##         1.2 - Use here package to define where data should be     ##
+##               found.                                              ##
+##                                                                   ##
 ## Note: The current version of this script can always be found at   ##
-##       http://analogue.r-forge.r-project.org/dperbook/             ##
+##       https://github.com/gavinsimpson/dper5                       ##
 ##       This script will be updated to work with the latest version ##
 ##       of the analogue package should the need arise.              ##
 ##                                                                   ##
 #######################################################################
 
-## load the analogue package
-require(analogue)
-## if that fails, install analogue:
-## install.packages("analogue", depend = TRUE)
+## Note: This script is designed to be run from the repo base. The
+##       *here* package takes care of this if you download the entire
+##       repo.
+
+## load the analogue and here packages
+library(analogue)
+library(here)
+## if that fails, install analogue and here:
+## install.packages(c("analogue", "here"), depend = TRUE)
 
 ## load the example data
 data(swapdiat, swappH, rlgh, package = "analogue")
 
 ## load in the sample ages for the RLGH samples
-age <- read.csv("../data/rlgh.age.csv", header = FALSE)
+age <- read.csv(here("data", "rlgh.age.csv"), header = FALSE)
 age <- as.numeric(age[,1])
 
 ## merge the data to common set of taxa...
@@ -178,7 +189,7 @@ layout(1)
 data(Pollen, Biome, package = "analogue")
 
 ## load in the pollen sample type information
-pinfo <- read.csv("../data/nampdb_sample_type.csv")
+pinfo <- read.csv(here("data", "nampdb_sample_type.csv"))
 
 ## identify which are from lacustrine environments == "LACU"
 pol.want <- with(pinfo, which(KGDISCR == "LACU"))
